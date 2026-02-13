@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julio Isaías Solaeche Florentín - Portafolio Profesional</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --secondary: #7c3aed;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --gradient: linear-gradient(135deg, #2563eb, #7c3aed);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #334155;
+            background: var(--light);
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: var(--gradient);
+            color: white;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid rgba(255,255,255,0.3);
+            margin-bottom: 1.5rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .section {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .section h2 {
+            color: var(--secondary);
+            border-left: 5px solid var(--primary);
+            padding-left: 1rem;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        /* Contacto */
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .contact-item {
+            padding: 0.5rem 1rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 30px;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Stats */
+        .stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .stat-item {
+            padding: 0.5rem 1rem;
+            background: rgba(255,255,255,0.15);
+            border-radius: 30px;
+            font-weight: 600;
+        }
+
+        /* Idiomas */
+        .languages {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .lang-item {
+            padding: 0.5rem 1rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 30px;
+        }
+
+        /* Botón WhatsApp */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 8px 25px rgba(37,211,102,0.4);
+            z-index: 1000;
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37,211,102,0); }
+            100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+        }
+
+        /* Grid de certificados */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .cert-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 1.5rem;
+            transition: 0.3s;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-color: var(--primary);
+        }
+
+        .cert-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-card .issuer {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .cert-card a {
+            display: inline-block;
+            margin-top: 1rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* Skills */
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            list-style: none;
+        }
+
+        .skills-list li {
+            background: var(--gradient);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+            .container { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/595992954169" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Header -->
+    <header>
+        <img src="https://i.imgur.com/Kjx3Obo.jpg" alt="Julio Isaías Solaeche Florentín" class="profile-img">
+        <h1>JULIO ISAÍAS SOLAECHE FLORENTÍN</h1>
+        <h2>Gestor Internacional de Proyectos & Especialista en Cooperación</h2>
+        <p>+6 años transformando vidas a través de programas educativos</p>
+        
+        <div class="contact-info">
+            <span class="contact-item"><i class="fas fa-map-marker-alt"></i> Asunción, Paraguay</span>
+            <span class="contact-item"><i class="fas fa-envelope"></i> isasolaeche@gmail.com</span>
+            <span class="contact-item"><i class="fas fa-phone-alt"></i> +595 992 954 169</span>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item"><i class="fas fa-users"></i> 500+ Capacitados</div>
+            <div class="stat-item"><i class="fas fa-project-diagram"></i> 15+ Programas</div>
+            <div class="stat-item"><i class="fas fa-globe"></i> 10+ Foros</div>
+            <div class="stat-item"><i class="fas fa-briefcase"></i> 6+ Años</div>
+        </div>
+
+        <div class="languages">
+            <div class="lang-item"><i class="fas fa-language"></i> Español (Nativo)</div>
+            <div class="lang-item"><i class="fas fa-language"></i> Guaraní (Nativo)</div>
+            <div class="lang-item"><i class="fas fa-language"></i> Inglés (C1)</div>
+            <div class="lang-item"><i class="fas fa-language"></i> Portugués (C1)</div>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <!-- Perfil -->
+        <section class="section">
+            <h2><i class="fas fa-user-tie"></i> Perfil Profesional</h2>
+            <p>Gestor multidisciplinario de proyectos e internacionalista con más de seis años de experiencia liderando organizaciones, diseñando programas educativos y coordinando iniciativas internacionales. Ha colaborado con el <strong>Banco Interamericano de Desarrollo (BID)</strong>, el <strong>Ministerio de la Juventud de Paraguay</strong> y diversas ONGs internacionales.</p>
+        </section>
+
+        <!-- Experiencia -->
+        <section class="section">
+            <h2><i class="fas fa-briefcase"></i> Experiencia Profesional</h2>
+            
+            <div style="margin-bottom: 2rem;">
+                <h3>Presidente (2018-2023) | Consultor Asociado (2024-Presente)</h3>
+                <p><strong>Centro de Progreso y Desarrollo (CPD)</strong></p>
+                <ul>
+                    <li>Ejecutor acreditado por SINAFOCAL en proyectos de formación (2019-2021)</li>
+                    <li>Más de 500 personas capacitadas</li>
+                </ul>
+            </div>
+
+            <div style="margin-bottom: 2rem;">
+                <h3>Secretario – Comité Nacional de Preparación</h3>
+                <p><strong>World Youth Festival (WYF) | 2024 – Presente</strong></p>
+            </div>
+
+            <div style="margin-bottom: 2rem;">
+                <h3>Fundador - Automia.com.py</h3>
+                <p><strong>Ganador Programa Bolt Emprende con KOGA 2025</strong></p>
+            </div>
+        </section>
+
+        <!-- Certificados -->
+        <section class="section">
+            <h2><i class="fas fa-certificate"></i> Certificaciones</h2>
+            
+            <h3>Internacionales</h3>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <h3>Gestión de Proyectos de Desarrollo</h3>
+                    <div class="issuer">Banco Interamericano de Desarrollo (BID)</div>
+                    <a href="certificados/01-bid-gestion-proyectos.pdf" target="_blank">Ver PDF</a>
+                </div>
+                <div class="cert-card">
+                    <h3>World Youth Festival 2024</h3>
+                    <div class="issuer">Rusia</div>
+                    <a href="certificados/05-world-youth-festival-2024.pdf" target="_blank">Ver PDF</a>
+                </div>
+                <div class="cert-card">
+                    <h3>Eurasia Global 2024/2025</h3>
+                    <div class="issuer">Rusia</div>
+                    <a href="certificados/06-eurasia-global-2024.pdf" target="_blank">2024</a> | 
+                    <a href="certificados/07-eurasia-global-2025.pdf" target="_blank">2025</a>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 2rem;">Platzi</h3>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <h3>Advanced English C1</h3>
+                    <a href="certificados/platzi/platzi-advanced-english-c1.pdf" target="_blank">Ver PDF</a>
+                </div>
+                <div class="cert-card">
+                    <h3>Design Thinking</h3>
+                    <a href="certificados/platzi/platzi-design-thinking.pdf" target="_blank">Ver PDF</a>
+                </div>
+                <div class="cert-card">
+                    <h3>Supply Chain</h3>
+                    <a href="certificados/platzi/platzi-supply-chain.pdf" target="_blank">Ver PDF</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Habilidades -->
+        <section class="section">
+            <h2><i class="fas fa-cogs"></i> Habilidades</h2>
+            <ul class="skills-list">
+                <li>Gestión de Proyectos</li>
+                <li>Cooperación Internacional</li>
+                <li>Diseño de Programas</li>
+                <li>Liderazgo</li>
+                <li>Automatización Digital</li>
+                <li>Emprendimiento</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer style="text-align: center; padding: 2rem; color: var(--gray);">
+        <p>© 2025 Julio Isaías Solaeche Florentín</p>
+    </footer>
+
+</body>
+</html>
